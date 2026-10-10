@@ -1,0 +1,24 @@
+# Secrets
+.env
+.env.*
+!.env.example
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.pytest_cache/
+
+# Notebooks
+.ipynb_checkpoints/
+
+# Local raw data and generated databases
+data/raw/
+*.sqlite
+*.db
+
+# Operating system and editor files
+.DS_Store
+Thumbs.db
+.vscode/
