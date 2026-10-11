@@ -1,0 +1,96 @@
+{
+  "analysis_type": "controlled_route_carrier_comparison",
+  "filters": {
+    "origin": "JFK",
+    "destination": "LAX",
+    "start_date": "2013-01-01",
+    "end_date": "2013-12-31",
+    "requested_carriers": null
+  },
+  "metric_contract": {
+    "delay_threshold_minutes": 15,
+    "minimum_valid_arrivals": 30,
+    "cancellation_proxy": "dep_time is missing",
+    "valid_arrival_rule": "arr_delay is not missing",
+    "average_delay_rule": "mean arr_delay where arr_delay > 15",
+    "rates_unit": "percent"
+  },
+  "comparison_note": "All carriers use the same origin, destination, and date range. No composite stability score or absolute winner is calculated.",
+  "carriers": [
+    {
+      "carrier": "AA",
+      "airline_name": "American Airlines Inc.",
+      "planned_flights": 3217,
+      "cancelled_flights": 21,
+      "cancellation_rate_pct": 0.65,
+      "valid_arrivals": 3187,
+      "delayed_arrivals": 583,
+      "arrival_delay_rate_pct": 18.29,
+      "on_time_arrivals": 2604,
+      "arrival_on_time_rate_pct": 81.71,
+      "average_delay_minutes": 63.49,
+      "sample_status": "sufficient",
+      "recommendation_eligible": true
+    },
+    {
+      "carrier": "B6",
+      "airline_name": "JetBlue Airways",
+      "planned_flights": 1688,
+      "cancelled_flights": 5,
+      "cancellation_rate_pct": 0.3,
+      "valid_arrivals": 1669,
+      "delayed_arrivals": 394,
+      "arrival_delay_rate_pct": 23.61,
+      "on_time_arrivals": 1275,
+      "arrival_on_time_rate_pct": 76.39,
+      "average_delay_minutes": 51.74,
+      "sample_status": "sufficient",
+      "recommendation_eligible": true
+    },
+    {
+      "carrier": "DL",
+      "airline_name": "Delta Air Lines Inc.",
+      "planned_flights": 2501,
+      "cancelled_flights": 9,
+      "cancellation_rate_pct": 0.36,
+      "valid_arrivals": 2487,
+      "delayed_arrivals": 413,
+      "arrival_delay_rate_pct": 16.61,
+      "on_time_arrivals": 2074,
+      "arrival_on_time_rate_pct": 83.39,
+      "average_delay_minutes": 48.9,
+      "sample_status": "sufficient",
+      "recommendation_eligible": true
+    },
+    {
+      "carrier": "UA",
+      "airline_name": "United Air Lines Inc.",
+      "planned_flights": 2059,
+      "cancelled_flights": 17,
+      "cancellation_rate_pct": 0.83,
+      "valid_arrivals": 2037,
+      "delayed_arrivals": 431,
+      "arrival_delay_rate_pct": 21.16,
+      "on_time_arrivals": 1606,
+      "arrival_on_time_rate_pct": 78.84,
+      "average_delay_minutes": 56.62,
+      "sample_status": "sufficient",
+      "recommendation_eligible": true
+    },
+    {
+      "carrier": "VX",
+      "airline_name": "Virgin America",
+      "planned_flights": 1797,
+      "cancelled_flights": 14,
+      "cancellation_rate_pct": 0.78,
+      "valid_arrivals": 1779,
+      "delayed_arrivals": 317,
+      "arrival_delay_rate_pct": 17.82,
+      "on_time_arrivals": 1462,
+      "arrival_on_time_rate_pct": 82.18,
+      "average_delay_minutes": 65.86,
+      "sample_status": "sufficient",
+      "recommendation_eligible": true
+    }
+  ]
+}
