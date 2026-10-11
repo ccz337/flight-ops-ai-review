@@ -1,0 +1,62 @@
+{
+  "decision": "explain",
+  "scope": {
+    "origin": "JFK",
+    "destination": "LAX",
+    "start_date": "2013-01-01",
+    "end_date": "2013-12-31"
+  },
+  "summary": "同一航线与日期范围内，各航司在取消、到达准点和明显延误后的平均延误时长方面存在不同取舍，不宜给出脱离消费者偏好的绝对排名。",
+  "tradeoffs": [
+    {
+      "statement": "DL的到达延误率最低、到达准点率最高，而且发生明显延误时的平均延误时长最短。",
+      "evidence_ids": [
+        "DL.arrival_delay_rate_pct",
+        "DL.arrival_on_time_rate_pct",
+        "DL.average_delay_minutes"
+      ]
+    },
+    {
+      "statement": "JetBlue的取消率最低，但到达延误率最高，说明单看一项指标会忽略其他取舍。",
+      "evidence_ids": [
+        "B6.cancellation_rate_pct",
+        "B6.arrival_delay_rate_pct"
+      ]
+    },
+    {
+      "statement": "AA的到达延误率较低，但发生明显延误时的平均延误时长偏长。",
+      "evidence_ids": [
+        "AA.arrival_delay_rate_pct",
+        "AA.average_delay_minutes"
+      ]
+    }
+  ],
+  "consumer_guidance": [
+    {
+      "statement": "如果更看重到达准点表现，可优先比较DL的到达延误率、到达准点率和平均延误时长。",
+      "evidence_ids": [
+        "DL.arrival_delay_rate_pct",
+        "DL.arrival_on_time_rate_pct",
+        "DL.average_delay_minutes"
+      ]
+    },
+    {
+      "statement": "如果更看重计划航班是否执行，可优先比较JetBlue的取消率，同时保留对其到达延误率的关注。",
+      "evidence_ids": [
+        "B6.cancellation_rate_pct",
+        "B6.arrival_delay_rate_pct"
+      ]
+    }
+  ],
+  "limitation_codes": [
+    "historical_2013_data",
+    "nyc_departures_only",
+    "not_full_purchase_decision",
+    "no_causal_claim"
+  ],
+  "recommendation_strength": "cautious",
+  "generation_disclosure": {
+    "generated_by": "OpenAI Codex",
+    "generation_mode": "development_assisted_sample"
+  }
+}
