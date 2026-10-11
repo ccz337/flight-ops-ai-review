@@ -13,8 +13,9 @@ venv/
 # Notebooks
 .ipynb_checkpoints/
 
-# Local raw data and generated databases
+# Local raw data, generated databases, and uncurated runs
 data/raw/
+outputs/
 *.sqlite
 *.db
 

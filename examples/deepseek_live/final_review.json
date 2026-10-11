@@ -1,0 +1,83 @@
+{
+  "decision": "explain",
+  "scope": {
+    "origin": "JFK",
+    "destination": "LAX",
+    "start_date": "2013-01-01",
+    "end_date": "2013-12-31"
+  },
+  "summary": "在相同航线和日期范围内，多家航司的样本量均达到可比要求。各航司在准点率、取消率和延误严重程度之间存在取舍，没有单一航司在所有指标上占优。建议结合个人对延误频率、延误时长和取消风险的偏好进行权衡。",
+  "tradeoffs": [
+    {
+      "statement": "American Airlines 的准点到达率相对较高，但其平均延误时长在可比航司中偏长，说明一旦发生延误，等待时间可能更久。",
+      "evidence_ids": [
+        "AA.arrival_on_time_rate_pct",
+        "AA.average_delay_minutes"
+      ]
+    },
+    {
+      "statement": "JetBlue Airways 的取消率相对较低，但其延误到达率在可比航司中偏高，说明航班更可能被保留但出现延误。",
+      "evidence_ids": [
+        "B6.cancellation_rate_pct",
+        "B6.arrival_delay_rate_pct"
+      ]
+    },
+    {
+      "statement": "Delta Air Lines 在准点到达率和平均延误时长上表现相对均衡，但其取消率并非最低。",
+      "evidence_ids": [
+        "DL.arrival_on_time_rate_pct",
+        "DL.average_delay_minutes",
+        "DL.cancellation_rate_pct"
+      ]
+    },
+    {
+      "statement": "United Air Lines 的取消率在可比航司中相对较高，同时其延误到达率也偏高。",
+      "evidence_ids": [
+        "UA.cancellation_rate_pct",
+        "UA.arrival_delay_rate_pct"
+      ]
+    },
+    {
+      "statement": "Virgin America 的准点到达率相对较高，但其平均延误时长在可比航司中偏长。",
+      "evidence_ids": [
+        "VX.arrival_on_time_rate_pct",
+        "VX.average_delay_minutes"
+      ]
+    }
+  ],
+  "consumer_guidance": [
+    {
+      "statement": "如果更在意航班是否准点到达，可优先关注准点到达率较高的航司，但需同时了解其延误发生后的平均等待时长。",
+      "evidence_ids": [
+        "DL.arrival_on_time_rate_pct",
+        "AA.arrival_on_time_rate_pct",
+        "VX.arrival_on_time_rate_pct"
+      ]
+    },
+    {
+      "statement": "如果更担心航班被取消，可关注取消率较低的航司，但需接受其可能较高的延误到达率。",
+      "evidence_ids": [
+        "B6.cancellation_rate_pct",
+        "DL.cancellation_rate_pct"
+      ]
+    },
+    {
+      "statement": "如果更在意延误后的等待时间，可关注平均延误时长较短的航司，但其准点率或取消率可能并非最优。",
+      "evidence_ids": [
+        "DL.average_delay_minutes",
+        "B6.average_delay_minutes"
+      ]
+    }
+  ],
+  "limitation_codes": [
+    "historical_2013_data",
+    "nyc_departures_only",
+    "not_full_purchase_decision",
+    "no_causal_claim"
+  ],
+  "recommendation_strength": "cautious",
+  "generation_disclosure": {
+    "generated_by": "DeepSeek deepseek-flash",
+    "generation_mode": "online_api"
+  }
+}

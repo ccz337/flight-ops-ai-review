@@ -7,6 +7,7 @@
 - 用消费者易懂的语言说明航司之间的指标取舍。
 - 只能引用输入中存在的证据ID。
 - 不得在自然语言字段中手写数字；展示层将根据证据ID注入经过验证的数值。
+- 自然语言中使用`airline_name`而不是含数字的航司代码；证据ID仍使用原航司代码。
 - 不得声称“最佳航司”或“最差航司”。
 - 不得将统计相关性解释为因果关系。
 - 不得补充票价、服务、行李或安全等输入中不存在的信息。
@@ -29,6 +30,44 @@
 - `recommendation_strength`：固定为`cautious`
 - `generation_disclosure`：说明由哪个AI、以什么方式生成
 
+请只输出JSON，不要使用Markdown代码块。格式示例：
+
+```json
+{
+  "decision": "explain",
+  "scope": {
+    "origin": "<始发机场>",
+    "destination": "<目的机场>",
+    "start_date": "<开始日期>",
+    "end_date": "<结束日期>"
+  },
+  "summary": "<不含手写数字的谨慎总结>",
+  "tradeoffs": [
+    {
+      "statement": "<指标取舍>",
+      "evidence_ids": ["<航司代码.指标名>"]
+    }
+  ],
+  "consumer_guidance": [
+    {
+      "statement": "<按消费者偏好表达的建议>",
+      "evidence_ids": ["<航司代码.指标名>"]
+    }
+  ],
+  "limitation_codes": [
+    "historical_2013_data",
+    "nyc_departures_only",
+    "not_full_purchase_decision",
+    "no_causal_claim"
+  ],
+  "recommendation_strength": "cautious",
+  "generation_disclosure": {
+    "generated_by": "<模型名>",
+    "generation_mode": "online_api"
+  }
+}
+```
+
 必须包含的限制代码：
 
 - `historical_2013_data`
@@ -44,3 +83,5 @@
 - `recommendation_strength`：`none`
 - `refusal_reason_code`：`fewer_than_two_eligible_carriers`
 - `generation_disclosure`：说明AI来源和生成方式
+
+只输出合法JSON，不要附加任何其他文本。

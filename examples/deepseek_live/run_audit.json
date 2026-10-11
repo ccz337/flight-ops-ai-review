@@ -1,0 +1,63 @@
+{
+  "mode": "api",
+  "provider": "DeepSeek",
+  "model": "deepseek-flash",
+  "pipeline_status": "approved",
+  "model_calls": [
+    {
+      "stage": "generator",
+      "provider": "DeepSeek",
+      "model": "deepseek-flash",
+      "request_id": "5766c68b-8466-4218-8f61-7dafa0bf1711",
+      "attempts": 1,
+      "elapsed_seconds": 6.542,
+      "usage": {
+        "completion_tokens": 799,
+        "prompt_tokens": 1777,
+        "total_tokens": 2576,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": {
+          "audio_tokens": null,
+          "cache_write_tokens": null,
+          "cached_tokens": 0,
+          "image_tokens": null,
+          "text_tokens": null
+        },
+        "prompt_cache_hit_tokens": 0,
+        "prompt_cache_miss_tokens": 1777
+      }
+    },
+    {
+      "stage": "reviewer",
+      "provider": "DeepSeek",
+      "model": "deepseek-flash",
+      "request_id": "312e5c61-1482-4edb-91b8-9a323e309d55",
+      "attempts": 1,
+      "elapsed_seconds": 2.072,
+      "usage": {
+        "completion_tokens": 155,
+        "prompt_tokens": 2297,
+        "total_tokens": 2452,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": {
+          "audio_tokens": null,
+          "cache_write_tokens": null,
+          "cached_tokens": 0,
+          "image_tokens": null,
+          "text_tokens": null
+        },
+        "prompt_cache_hit_tokens": 0,
+        "prompt_cache_miss_tokens": 2297
+      }
+    }
+  ],
+  "model_call_count": 2,
+  "started_at_utc": "2026-10-11T10:55:52.932293+00:00",
+  "finished_at_utc": "2026-10-11T10:56:02.066095+00:00",
+  "elapsed_seconds": 9.134,
+  "evidence_sha256": "a7fe0885af7c28abd6a77610e4de3cac55ea6630ea71a07371033658a1580178",
+  "generator_prompt_sha256": "8778451df5a4c332de4dfda6b62e31167aa556e9f12a099c3225d859fd325fa7",
+  "reviewer_prompt_sha256": "5a7dc13faea380348a81d3ac0229dbfedbed718282fe2fac18fb44f56f58ebcf",
+  "api_key_recorded": false,
+  "cost_note": "Token usage is recorded per call. Apply the current official DeepSeek pricing; prices are intentionally not hard-coded."
+}

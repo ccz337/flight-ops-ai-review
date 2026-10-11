@@ -1,0 +1,15 @@
+{
+  "decision": "pass",
+  "checks": {
+    "scope_matches": true,
+    "claims_supported": true,
+    "citations_complete": true,
+    "no_handwritten_numbers": true,
+    "no_causal_overreach": true,
+    "limitations_complete": true,
+    "recommendation_is_cautious": true,
+    "consumer_guidance_is_clear": true
+  },
+  "issue_codes": [],
+  "review_summary": "候选解释通过全部检查。机场与日期范围与证据一致；各取舍与建议均引用有效证据ID；自然语言中未出现手写事实数字；未将历史相关性表述为因果；四项必需限制代码齐全；建议以消费者偏好表达且未宣布绝对最佳或保证未来表现。"
+}
