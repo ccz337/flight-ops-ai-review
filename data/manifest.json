@@ -1,0 +1,56 @@
+{
+  "dataset": "nycflights13",
+  "package_version": "1.0.2",
+  "source_url": "https://cran.r-project.org/src/contrib/nycflights13_1.0.2.tar.gz",
+  "license": "CC0",
+  "archive_sha256": "0e87c5a4e285f16750e91c75aeba33b1e4682cdabf4a3effe5a1de7398394a1d",
+  "tables": {
+    "airlines": {
+      "rows": 16,
+      "columns": [
+        "carrier",
+        "name"
+      ],
+      "csv_sha256": "162551bd3401a12d63db3d92b7e66af3017d2e40d55919d6a678489323c10609"
+    },
+    "airports": {
+      "rows": 1458,
+      "columns": [
+        "faa",
+        "name",
+        "lat",
+        "lon",
+        "alt",
+        "tz",
+        "dst",
+        "tzone"
+      ],
+      "csv_sha256": "4c4f0496a47a3c328fea1d00acf6f8da62d7bd3038304583412d287749e3b034"
+    },
+    "flights": {
+      "rows": 336776,
+      "columns": [
+        "year",
+        "month",
+        "day",
+        "dep_time",
+        "sched_dep_time",
+        "dep_delay",
+        "arr_time",
+        "sched_arr_time",
+        "arr_delay",
+        "carrier",
+        "flight",
+        "tailnum",
+        "origin",
+        "dest",
+        "air_time",
+        "distance",
+        "hour",
+        "minute",
+        "time_hour"
+      ],
+      "csv_sha256": "0d10ae58d7e471818fd9b8f9116ebcdd59e2633c03c1fc32a686461ac3602fad"
+    }
+  }
+}

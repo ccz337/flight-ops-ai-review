@@ -1,77 +1,66 @@
-# Data Source
+# 数据说明
 
+## 数据集
 
+- 名称：`nycflights13`
+- 稳定版本：`1.0.2`
+- 发布日期：2021-04-12
+- 许可：CC0
+- DOI：https://doi.org/10.32614/CRAN.package.nycflights13
+- CRAN官方页面：https://CRAN.R-project.org/package=nycflights13
+- 官方项目页面：https://nycflights13.tidyverse.org/
 
-## Dataset
+## 数据覆盖
 
+该数据集包含2013年从纽约三座机场出发的336,776条航班记录：
 
+- EWR：纽瓦克自由国际机场
+- JFK：约翰·肯尼迪国际机场
+- LGA：拉瓜迪亚机场
 
-\- Name: nycflights13
+官方数据包共提供五张表：
 
-\- Stable version: 1.0.2
+- `flights`：航班记录
+- `airlines`：航司代码与名称
+- `airports`：机场信息
+- `weather`：逐小时天气信息
+- `planes`：飞机信息
 
-\- Published: 2021-04-12
+当前MVP只使用`flights`、`airlines`和`airports`三张必要数据表。
+暂不使用天气和飞机数据，因为第一版不分析天气原因或机型影响。
 
-\- License: CC0
+## 数据获取与验证
 
-\- DOI: https://doi.org/10.32614/CRAN.package.nycflights13
+可复现的数据获取脚本位于`src/fetch_data.py`。
 
-\- Official package page: https://CRAN.R-project.org/package=nycflights13
+脚本执行以下检查：
 
-\- Official project page: https://nycflights13.tidyverse.org/
+1. 从CRAN下载`nycflights13 1.0.2`。
+2. 校验官方压缩包的SHA-256。
+3. 检查三张数据表的字段和行数。
+4. 将数据转换为CSV。
+5. 将数据版本、字段、行数和CSV哈希记录到`data/manifest.json`。
 
+当前已验证的行数：
 
+- `airlines`：16行
+- `airports`：1,458行
+- `flights`：336,776行
 
-## Coverage
+脚本已经完成两次运行，两次生成的manifest完全一致。
 
+原始压缩包、R数据文件和生成的CSV保存在`data/raw/`，不会提交到Git。
+其他人可以通过获取脚本重新生成这些文件。
 
+## 使用限制
 
-The package contains 336,776 flights that departed from New York City airports
+该数据只覆盖2013年从纽约出发的历史航班，不能代表：
 
-EWR, JFK, and LGA during 2013.
+- 当前航班或航司的实时表现；
+- 纽约以外的全部出发地点；
+- 全球所有航空公司的运行表现；
+- 票价、服务、行李、安全和航线便利性；
+- 完整或真实的购票推荐。
 
-
-
-It provides five tables:
-
-
-
-\- flights
-
-\- airlines
-
-\- airports
-
-\- weather
-
-\- planes
-
-
-
-## Current project status
-
-
-
-The data has not been downloaded yet.
-
-
-
-The download method, file SHA-256 hashes, table schemas, and verified row counts
-
-will be added after the reproducible data retrieval script is completed.
-
-
-
-Raw data will be stored under `data/raw/` and will not be committed to Git.
-
-
-
-## Limitations
-
-
-
-This is historical data for flights departing from New York City in 2013.
-
-It does not represent current airline performance, all departure locations,
-
-real-time conditions, or a complete flight-purchase recommendation.
+本项目目前是用于验证消费者航班稳定性比较框架的作品集原型，
+尚未经过真实用户访谈、业务验证或线上使用。
